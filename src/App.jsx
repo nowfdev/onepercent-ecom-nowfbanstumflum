@@ -12,6 +12,7 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Order from "./pages/Order";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/order" element={<Order />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
