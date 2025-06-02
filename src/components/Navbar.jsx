@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
 
 import { assets } from "../assets/assets.js";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext.jsx";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { setShowSearch } = useContext(ShopContext);
 
+  const location = useLocation();
+
   const showHideSerchHandler = () => {
-    setShowSearch((prev) => !prev);
+    if (location.pathname === "/collection") setShowSearch((prev) => !prev);
   };
 
   return (
@@ -38,11 +40,15 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
-        <img
-          onClick={showHideSerchHandler}
-          src={assets.search_icon}
-          className="w-5 cursor-pointer"
-        />
+        <Link to={location.pathname !== "/collection" ? "/collection" : null}>
+          {" "}
+          <img
+            onClick={showHideSerchHandler}
+            src={assets.search_icon}
+            className="w-5 cursor-pointer"
+          />
+        </Link>
+
         <div className="group relative">
           <img src={assets.profile_icon} className="w-5 cursor-pointer" />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
