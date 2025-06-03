@@ -41,7 +41,6 @@ const Navbar = () => {
       </ul>
       <div className="flex items-center gap-6">
         <Link to={location.pathname !== "/collection" ? "/collection" : null}>
-          {" "}
           <img
             onClick={showHideSerchHandler}
             src={assets.search_icon}
@@ -59,6 +58,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        {/*  */}
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
