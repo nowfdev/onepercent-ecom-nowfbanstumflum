@@ -5,7 +5,7 @@ import CartTotal from "../components/CartTotal";
 import { assets } from "../assets/assets";
 
 const Cart = () => {
-  const { products, currency, cartItem, updateQuantity } =
+  const { products, currency, cartItem, updateQuantity, navigate } =
     useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
@@ -77,7 +77,7 @@ const Cart = () => {
                 }
               />
               <img
-                className="w-4 mr-4 sm:w-5  cursor-pointer"
+                className="w-4 mr-4 sm:w-5 cursor-pointer"
                 src={assets.bin_icon}
                 alt=""
                 onClick={() => updateQuantity(item._id, item.size, 0)}
@@ -85,9 +85,17 @@ const Cart = () => {
             </div>
           );
         })}
-        <div className="flex justify-end my-20">
-          <div className="w-full sm:w-[450px] ">
-            <CartTotal />
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px] ">
+          <CartTotal />
+          <div className="w-full text-end">
+            <button
+              onClick={() => navigate("/place-order")}
+              className="bg-black text-white text-sm my-8 px-8 py-3"
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       </div>
