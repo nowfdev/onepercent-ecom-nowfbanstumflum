@@ -35,5 +35,6 @@ function NewsLetterBox() {
 }
 
 // Update 0706
+// Update 0706
 
 export default NewsLetterBox;
