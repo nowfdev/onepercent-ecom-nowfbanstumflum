@@ -34,4 +34,6 @@ function NewsLetterBox() {
   );
 }
 
+// Update 0706
+
 export default NewsLetterBox;
